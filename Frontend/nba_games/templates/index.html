@@ -13,7 +13,8 @@
   <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|
               Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|
               Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
-  <link href="//db.onlinewebfonts.com/c/3b6a3b46f2fbe16704b7d85493e7c38e?family=Ren+&+Stimpy" rel="stylesheet" type="text/css"/>
+  <link href="//db.onlinewebfonts.com/c/3b6a3b46f2fbe16704b7d85493e7c38e?family=Ren+&+Stimpy" rel="stylesheet"
+    type="text/css" />
 </head>
 
 <body>
@@ -25,32 +26,53 @@
         <h2>PIck a Winner</h2>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>SELECT Team:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Sample MetaData</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body">METADATA-LOADING</div>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <!-- <div id="pie"></div> -->
-      </div>
 
-      <div class="col-md-5">
-        <!-- <div id="gauge"></div> -->
+    <div class="well">
+      <div class="row">
+
+        <div class="col-md-6">
+          <h5>SELECT Home Team:</h5>
+          <select id="selDatasetHome" onchange="optionChangedHome(this.value)"></select>
+        </div>
+        <div class="col-md-6">
+          <h5>SELECT Away Team:</h5>
+          <select id="selDatasetAway" onchange="optionChangedAway(this.value)"></select>
+        </div>
+
       </div>
     </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sample MetaData</h3>
+      </div>
+      <div class="col-md-6">
+        <div id="sample-metadataHome" class="panel-body">METADATA-LOADING</div>
+      </div>
+      <div class="col-md-6"> 
+        <div id="sample-metadataAway" class="panel-body">METADATA-LOADING</div>
+      </div>   
+    </div>
+  </div>
+  <div class="col-md-6">
+    <!-- <div id="pie"></div> -->
+  </div>
+
+  <div class="col-md-6">
+    <!-- <div id="gauge"></div> -->
+  </div>
+  </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <!-- <div id="bubble"></div> -->
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">.col-sm-4</div>
+    <div class="col-sm-4">.col-sm-4</div>
+    <div class="col-sm-4">.col-sm-4</div>
   </div>
 
   <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
