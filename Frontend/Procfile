@@ -1,0 +1,1 @@
+web: gunicorn nba_games.app:app

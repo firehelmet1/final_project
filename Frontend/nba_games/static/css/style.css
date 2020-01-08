@@ -1,0 +1,173 @@
+@import url(//db.onlinewebfonts.com/c/3b6a3b46f2fbe16704b7d85493e7c38e?family=Ren+&+Stimpy);
+@font-face {font-family: "Ren & Stimpy"; src: url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.eot"); src: url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.woff") format("woff"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.svg#Ren & Stimpy") format("svg"); }
+html,
+body {
+  font-family: "Ren & Stimpy";
+  color: rgb(255, 217, 0);
+
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #508a94;
+
+  /* background-image: url("maxresdefault.jpg");
+  background-size: 100%;  */
+  /* background: linear-gradient(114deg, rgba(240,202,0,1) 0%, rgba(19,121,9,1) 39%, rgba(3,121,219,1) 60%, rgba(150,255,0,1) 100%); */
+}
+
+h1 { 
+  font-family: "Ren & Stimpy";
+  font-size: 35px;
+  font-weight: bold;
+
+  color: rgb(255, 217, 0);
+  /* text-shadow: 3px 2px 3px #e6ff05; */
+  /* text-shadow: 10px 0px 9px rgb(0, 0, 0) ; */
+}
+h2 {
+  font-size: 30px;
+  color: rgb(255, 217, 0);
+  /* text-shadow: 2px 2px rgb(0, 45, 87); */
+  text-shadow: 3px 3px 2px black;  
+
+}
+h3 {
+  font-family: "Ren & Stimpy";
+  font-size: 25px;
+  color: rgb(255, 217, 0);
+}
+h4 {
+  font-size: 35px;
+  color: rgb(13, 21, 51, .7);
+  text-shadow: 2px 0px 2px white ;
+}
+h5 {
+  font-size: 25px;
+  color: rgb(255, 217, 0);
+  text-shadow: 2px 0px 2px black ;
+}
+
+.jumbotron {
+  font-family: "Ren & Stimpy";
+  text-shadow: 4px 2px 4px #000000;
+  
+  font-size: 35px;
+  color: rgb(255, 217, 0);
+  font-weight: bold;
+  /* box-shadow: 5px 10px 40px  #5adfd6;
+  padding: 10px; */
+  background:rgba(8, 77, 77, 0);
+  /* background-image: url("maxresdefault.jpg");
+  background-size: 100%;  */
+
+}
+div {
+  background: rgba(68, 56, 1, 0);
+  color: rgb(255, 217, 0);
+  /* background: rgb(240,202,0);
+  background: linear-gradient(114deg, rgba(240,202,0,1) 0%, rgba(19,121,9,1) 39%, rgba(3,121,219,1) 60%, rgba(150,255,0,1) 100%); */
+}
+.container {
+  width: 100%;
+  padding: 10px;
+  color: rgb(255, 217, 0);  
+  background: rgba(68, 56, 1, 0);
+  /* border: 4px; */
+}
+
+.main-svg {
+  width: 100%;
+  padding: 10px;
+  font-family: "Ren & Stimpy";
+  color: rgb(255, 217, 0);
+  background: rgba(3, 30, 34, 0);
+  /* border: 4px; */
+}
+.svg-container {
+  width: 100%;
+  padding: 10px;
+  font-family: "Ren & Stimpy";  
+  color: rgb(255, 217, 0);
+  background: rgba(3, 30, 34, 0);
+  /* border: 4px; */
+}
+
+.plot-container {
+  width: 100%;
+  padding: 10px;
+  
+  font-family: "Ren & Stimpy";  
+  color: rgb(255, 217, 0);
+  background: rgba(3, 30, 34, 0);
+  /* border: 4px; */
+}
+.panel {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  text-shadow: 2px 0px 2px black ;
+  color: rgb(255, 217, 0);
+  background: rgba(100, 82, 2, 0.432);
+  /* border: 4px; */
+}
+.panel-title {
+
+  font-size: 25px;
+  text-shadow: 2px 0px 2px black ;
+  color: white
+  /* background: rgba(100, 82, 2, 0.432); */
+  /* border: 4px; */
+}
+
+.well {
+  width: 100%;
+  padding: 5px;
+  color: black;
+  background: rgba(102, 82, 2, 0.432);
+  text-shadow: 1px 1px 1px #000000;
+  
+  font-size: 25px;
+  /* border: 4px; */
+}
+
+/* .tooltip {
+  display: none;
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  padding: 2px;
+  font: 12px sans-serif;
+  text-align: center;
+  background: orange;
+  border: 0;
+  border-radius: 10px;
+} */
+
+/* 
+text {
+  font-family: sans-serif;
+  font-size: 12px;
+  fill: white;
+}
+#tooltip {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -mox-box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rbga(0, 0, 0, 0.4) pointer-events: none;
+}
+#tooltip.hidden {
+  opacity: 0;
+}
+#tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+} */
