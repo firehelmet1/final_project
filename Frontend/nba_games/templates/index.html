@@ -21,39 +21,62 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>NBA Game Predictor</h1>
-        <h2>PIck a Winner</h2>
-      </div>
-    </div>
+      <center>
+        <div class="jumbotron">
+          <img src="../static/Images/nba-logo-transparent-300x300.png" style="width:20%; float:right;"
+            class="img-rounded" alt="NBA logo">
 
+          <h1>NBA Game Predictor</h1>
+          <h2>Pick a Winner</h2>
+        </div>
+      </center>
+    </div>
+  </div>
+  <center>
     <div class="well">
       <div class="row">
 
-        <div class="col-md-6">
-          <h5>SELECT Home Team:</h5>
-          <select id="selDatasetHome" onchange="optionChangedHome(this.value)"></select>
+        <div class="col-sm-6">
+          <center>
+            <h5>SELECT Home Team:</h5>
+            <select id="selDatasetHome" onchange="optionChangedHome(this.value)"></select>
+          </center>
         </div>
-        <div class="col-md-6">
-          <h5>SELECT Away Team:</h5>
-          <select id="selDatasetAway" onchange="optionChangedAway(this.value)"></select>
+        <div class="col-sm-6">
+          <center>
+            <h5>SELECT Away Team:</h5>
+            <select id="selDatasetAway" onchange="optionChangedAway(this.value)"></select>
+          </center>
         </div>
 
       </div>
     </div>
 
     <div class="panel panel-primary">
-      <div class="panel-heading">
+      <!-- <div class="panel-heading">
         <h3 class="panel-title">Sample MetaData</h3>
+      </div> -->
+      <div class="col-sm-6">
+        <center>
+          <div id="teamLogo_Home" class="panel-body">LOGO-LOADING</div>
+        </center>
+
+        <center>
+          <div id="sample-metadataHome" class="panel-body">METADATA-LOADING</div>
+        </center>
+
       </div>
-      <div class="col-md-6">
-        <div id="sample-metadataHome" class="panel-body">METADATA-LOADING</div>
+      <div class="col-sm-6">
+        <center>
+          <div id="teamLogo_Away" class="panel-body">LOGO-LOADING</div>
+        </center>
+        <center>
+          <div id="sample-metadataAway" class="panel-body">METADATA-LOADING</div>
+        </center>
       </div>
-      <div class="col-md-6"> 
-        <div id="sample-metadataAway" class="panel-body">METADATA-LOADING</div>
-      </div>   
     </div>
-  </div>
+    </div>
+  </center>
   <div class="col-md-6">
     <!-- <div id="pie"></div> -->
   </div>
@@ -69,11 +92,7 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-4">.col-sm-4</div>
-    <div class="col-sm-4">.col-sm-4</div>
-    <div class="col-sm-4">.col-sm-4</div>
-  </div>
+
 
   <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
