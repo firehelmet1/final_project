@@ -56,9 +56,6 @@ def sample_metadata(NICKNAME):
     """Return the MetaData for a given TEAM_ID."""
     sel = [
         Samples_Metadata.TEAM_ID,
-        # Samples_Metadata.LEAGUE_ID,
-        # Samples_Metadata.MIN_YEAR,
-        # Samples_Metadata.MAX_YEAR,
         Samples_Metadata.CITY,
         Samples_Metadata.ABBREVIATION,
         Samples_Metadata.NICKNAME,
@@ -70,9 +67,6 @@ def sample_metadata(NICKNAME):
     sample_metadata = {}
     for result in results:
         sample_metadata["TEAM_ID"] = result[0]
-        # sample_metadata["LEAGUE_ID"] = result[1]
-        # sample_metadata["MIN_YEAR"] = result[2]
-        # sample_metadata["MAX_YEAR"] = result[3]
         sample_metadata["CITY"] = result[1]
         sample_metadata["ABBREVIATION"] = result[2]
         sample_metadata["NICKNAME"] = result[3]
