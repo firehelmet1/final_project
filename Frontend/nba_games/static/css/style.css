@@ -2,29 +2,31 @@
 @font-face {font-family: "Ren & Stimpy"; src: url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.eot"); src: url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.woff") format("woff"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.svg#Ren & Stimpy") format("svg"); }
 html,
 body {
-  font-family: "Ren & Stimpy";
+  font-family: "Impact";
   color: rgb(255, 217, 0);
-
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background: #508a94;
-
+  /* height: 100%; */
+  /* padding: 0; */
+  /* margin: 0; */
+  background: #000000;
   /* background-image: url("../Images/basketball-court-bg.jpg"); */
   background-image: url("../Images/Gymfloor1.jpg");
-  background-size: 100%; 
+  background-size: 35%, 100%; 
+  /* background-origin: content-box; */
+  background-position: center 89%, right top;
+  background-repeat: no-repeat, no-repeat;
   /* background-attachment: fixed; */
   /* background: linear-gradient(114deg, rgba(240,202,0,1) 0%, rgba(19,121,9,1) 39%, rgba(3,121,219,1) 60%, rgba(150,255,0,1) 100%); */
 }
 
 h1 { 
-  font-family: "Ren & Stimpy";
-  font-size: 35px;
+  font-family: "Impact";
+  font-size: 45px;
   font-weight: bold;
+  color: rgb(255, 255, 255);
+  /* color: rgb(255, 217, 0); */
+  /* color: linear-gradient(90deg, rgba(6,0,112,1) 49%, rgba(255,0,0,1) 51%); */
+  text-shadow: 3px 3px 2px black;  
 
-  color: rgb(255, 217, 0);
-  /* text-shadow: 3px 2px 3px #e6ff05; */
-  /* text-shadow: 10px 0px 9px rgb(0, 0, 0) ; */
 }
 h2 {
   font-size: 30px;
@@ -34,9 +36,10 @@ h2 {
 
 }
 h3 {
-  font-family: "Ren & Stimpy";
+  font-family: "Impact";
   font-size: 25px;
   color: rgb(255, 217, 0);
+  text-shadow: 3px 3px 2px black;  
 }
 h4 {
   font-size: 35px;
@@ -46,13 +49,18 @@ h4 {
 h5 {
   font-size: 25px;
   color: rgb(255, 217, 0);
-  text-shadow: 2px 0px 2px black ;
+  text-shadow: 3px 3px 2px black;  
+}
+
+#selDatasetAway, #selDatasetHome {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .jumbotron {
-  font-family: "Ren & Stimpy";
+  font-family: "Impact";
   text-shadow: 4px 2px 4px #000000;
-  width: 85%;
+  width: 90%;
   font-size: 35px;
   color: rgb(255, 217, 0);
   font-weight: bold;
@@ -65,6 +73,8 @@ h5 {
 div {
   background: rgba(68, 56, 1, 0);
   color: rgb(255, 217, 0);
+  text-shadow: 2px 2px 2px black;  
+  /* border-style: solid; */
   /* background: rgb(240,202,0);
   background: linear-gradient(114deg, rgba(240,202,0,1) 0%, rgba(19,121,9,1) 39%, rgba(3,121,219,1) 60%, rgba(150,255,0,1) 100%); */
 }
@@ -79,7 +89,7 @@ div {
 .main-svg {
   width: 100%;
   padding: 10px;
-  font-family: "Ren & Stimpy";
+  font-family: "Impact";
   color: rgb(255, 217, 0);
   background: rgba(3, 30, 34, 0);
   /* border: 4px; */
@@ -87,7 +97,7 @@ div {
 .svg-container {
   width: 100%;
   padding: 10px;
-  font-family: "Ren & Stimpy";  
+  font-family: "Impact";  
   color: rgb(255, 217, 0);
   background: rgba(3, 30, 34, 0);
   /* border: 4px; */
@@ -97,19 +107,21 @@ div {
   width: 100%;
   padding: 10px;
   
-  font-family: "Ren & Stimpy";  
+  font-family: "Impact";  
   color: rgb(255, 217, 0);
   background: rgba(3, 30, 34, 0);
   /* border: 4px; */
 }
 .panel {
-  width: 85%;
+  width: 90%;
   padding: 10px;
   font-size: 20px;
   text-shadow: 2px 0px 2px black ;
   color: rgb(255, 217, 0);
   background: rgba(100, 82, 2, 0.432);
-  /* border: 4px; */
+  overflow: auto;
+  border: 3px;
+  border-style: solid;
 }
 .panel-title {
 
@@ -121,14 +133,16 @@ div {
 }
 
 .well {
-  width: 85%;
-  padding: 5px;
-  color: black;
+  width: 90%;
+  padding: 15px;
+  color: rgb(255, 255, 255);
   background: rgba(102, 82, 2, 0.432);
-  text-shadow: 1px 1px 1px #000000;
-  
+  overflow: auto;
   font-size: 25px;
-  /* border: 4px; */
+  text-shadow: 3px 3px 2px black;  
+  /* background: linear-gradient(45deg, rgba(6,0,112,1) 49%, rgba(255,0,0,1) 51%); */
+  border: 3px;
+  border-style: solid;
 }
 
 /* .tooltip {

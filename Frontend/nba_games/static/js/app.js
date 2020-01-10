@@ -6,12 +6,16 @@ function buildMetadataHome(sample) {
     // Use d3 to select the panel with id of `#sample-metadata`
     var sample_metadata_tableHome = d3.select("#sample-metadataHome");
     var teamLogo_Home = d3.select("#teamLogo_Home");
+    var bgStyle = d3.select("#bgStyle");
+
     // console.log(sample_metadata_tableHome)
     // console.log(teamLogo_Home)
 
     // Use `.html("") to clear any existing metadata
     sample_metadata_tableHome.html("");
     teamLogo_Home.html("");
+    bgStyle.html("");
+
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
@@ -28,10 +32,13 @@ function buildMetadataHome(sample) {
         var div = teamLogo_Home.append("img");
         div.attr("src", "../static/Images/Logos/" + obj[1] + ".png");
         div.attr("style", "width:70%" );
+        var text = bgStyle.append("style");
+        text.text("body {background-image: url('../static/Images/Courts/" + obj[1] + ".jpg'), url('../static/Images/Gymfloor1.jpg');}");
+        // style.attr("url",'../static/Images/Gymfloor1.jpg');
         // console.log(Object.entries(data)[0]); 
         console.log(obj[1]); 
 
-      // });
+      // });  background-size: 35%, 100%; 
       
     });
     
