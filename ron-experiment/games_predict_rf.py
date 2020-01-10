@@ -64,7 +64,7 @@ for x in range(len(matchups)):
     
 # Fitting our model with all of our features in X
     score = rf.score(X, y)
-    predictor.append(rf.predict(X).mean()- 0.5*np.var(rf.predict(X))/record)
+    predictor.append(rf.predict(X).mean()- 0.6*np.var(rf.predict(X))/record)
 
 # Calculate Spread
     home_score = game['PTS_home'].mean()
