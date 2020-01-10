@@ -6,14 +6,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 ## Read in Games, Teams, Matchups datasets
-games = pd.read_csv('games.csv')
+game = pd.read_csv('games.csv')
+games = game
+
 teams = pd.read_csv('teams.csv')
 matchups = pd.read_csv('matchups_early.csv')
-matchups.reset_index(drop=True).head(2)
+matchups.reset_index(drop=True)
 
 # Drop redundant columns
-games.drop(['TEAM_ID_home','TEAM_ID_away', 'GAME_STATUS_TEXT', 'GAME_DATE_EST'], axis=1, inplace=True)
-games.drop_duplicates()
+game.drop(['TEAM_ID_home','TEAM_ID_away', 'GAME_STATUS_TEXT', 'GAME_DATE_EST'], axis=1, inplace=True)
+game.drop_duplicates()
 
 # Loop through recent games (matchups_early)
 spread_predict = []
@@ -29,7 +31,6 @@ for x in range(len(matchups)):
       
     home = matchups.iloc[x]['Home']
     visitor = matchups.iloc[x]['Visitor']
-    game = games
 
     for i in range(len(teams)):
         if teams.iloc[i]['ABBREVIATION'] == home:
@@ -50,6 +51,7 @@ for x in range(len(matchups)):
 #Split Dataset for training, test
     X = game.drop("HOME_TEAM_WINS", axis=1)
     y = game["HOME_TEAM_WINS"]
+    print(len(X),len(y))
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
 
 #Calculate Historical Win%
@@ -104,4 +106,4 @@ matchups['Logic'] = win_logic
 matchups.to_csv('matchup_output_early.csv')
 
 #matchups prediction accuracy
-print((sum(win_logic) / len(win_logic)), sum(score_predict)/len(score_predict))
+print("Standard: ",(sum(win_logic) / len(win_logic)), sum(score_predict)/len(score_predict))
