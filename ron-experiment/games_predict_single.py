@@ -34,8 +34,8 @@ game.drop(['GAME_ID','HOME_TEAM_ID',
 game.dropna(inplace=True)
     
 #Split Dataset for training, test
-X = game.drop("HOME_TEAM_WINS", axis=1)
 y = game["HOME_TEAM_WINS"]
+X = game.drop("HOME_TEAM_WINS", axis=1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
 
 #Calculate Historical Win%
