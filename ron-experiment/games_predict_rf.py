@@ -63,8 +63,8 @@ for x in range(len(matchups)):
     rf = rf.fit(X_train, y_train)
     
 # Fitting our model with all of our features in X
-    score = rf.score(X, y)
-    predictor.append(rf.predict(X).mean()- 0.6*np.var(rf.predict(X))/record)
+    score = rf.score(X_test, y_test)
+    predictor.append(rf.predict(X).mean()- 0.5*np.var(rf.predict(X))/record)
 
 # Calculate Spread
     home_score = game['PTS_home'].mean()
@@ -82,14 +82,17 @@ for x in range(len(matchups)):
 matchups['Home_Score'] = hscore
 matchups['Visitor_Score'] = vscore
 matchups['R-Coefficient'] = score_predict
-matchups['Historical Home Win Record'] = record_predict
+matchups['Home vs. Visitor Record'] = record_predict
 
 win_predictor = []
 win_logic = []
 
 for i in range (len(matchups)):
-    if predictor[i] > 0.5:
-        win_predictor.append(matchups.iloc[i]['Home'])
+    if predictor[i] >= 0.5:
+        if spread_predict[i] >= 3:
+            win_predictor.append(matchups.iloc[i]['Home'])
+        else:
+            win_predictor.append(matchups.iloc[i]['Visitor'])
     else:
         win_predictor.append(matchups.iloc[i]['Visitor'])
             
@@ -101,6 +104,7 @@ for i in range (len(matchups)):
 
 matchups['Prediction'] = win_predictor
 matchups['Logic'] = win_logic
+matchups['Home Spread'] = spread_predict
 matchups.to_csv('matchup_output_early.csv')
 
 #matchups prediction accuracy

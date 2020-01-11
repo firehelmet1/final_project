@@ -29,7 +29,7 @@ function buildMetadataHome(placehold) {
         const obj = Object.entries(data)[0];
         var div = teamLogo_Home.append("img");
         div.attr("src", "../static/Images/Logos/" + obj[1] + ".png");
-        div.attr("style", "width:70%" );
+        div.attr("style", "width:80%" );
         var text = bgStyle.append("style");
         text.text("body {background-image: url('../static/Images/Courts/" + obj[1] + ".jpg'), url('../static/Images/Gymfloor1.jpg');}");
         // style.attr("url",'../static/Images/Gymfloor1.jpg');
@@ -146,7 +146,7 @@ function buildMetadataAway(placehold) {
         const obj = Object.entries(data)[0];
         var div = teamLogo_Away.append("img");
         div.attr("src", "../static/Images/Logos/" + obj[1] + ".png");
-        div.attr("style", "width:70%" );
+        div.attr("style", "width:80%" );
         // console.log(Object.entries(data)[0]); 
         console.log(obj[1]); 
 
