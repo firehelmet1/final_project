@@ -43,11 +43,25 @@ function buildMetadataHome(placehold) {
 
 // Submit Button handler
 function predictHandler() {
-  // placehold defined in function below in init function as AwaySample
-  // var selectorH = d3.select("#selDatasetHome");
-  // var selectorA = d3.select("#selDatasetAway");
-  // Use the list of sample names to populate the select options
-  // d3.json("/names").then((nickNamesHome) => {
+  const predictSample =document.getElementById("selDatasetHome").value;
+  
+  var url = `/metadata/${predictSample}`;
+  // var metaData = url;
+  var sound0 = new Audio('../static/Images/heShoots.mp4'); 
+
+  // Fetch the JSON data and console log it
+  // .then is Asynchronus call to request the data and keep going while waiting for data
+  d3.json(url).then((data) => {   
+    // console.log("HELLO YOU IDIOT");
+    const obj = Object.entries(data)[0];
+    console.log(obj[1]); 
+
+      if(obj[1] == 'BOS'){
+          console.log("You Filthy Swine");
+          sound0.play();  
+      }
+      // predictHandler('BOS')
+  });
 
     const HomeSample =document.getElementById("selDatasetHome").value;
     const AwaySample =document.getElementById("selDatasetAway").value;
@@ -59,15 +73,18 @@ function predictHandler() {
           const obj = Object.entries(data)[0];
           console.log(obj[1]);
           home = obj[1];
+          myFunction(home, away);
       });
       d3.json(urlA).then((data) => {
         const obj = Object.entries(data)[0];
         console.log(obj[1]);
         away = obj[1];
-        myFunction(home, away);
+        
     });
+    
     // });
   }
+  home = '';
 // Snackbar Handler
 function myFunction(home, away) {
   // Get the snackbar DIV
@@ -80,7 +97,7 @@ function myFunction(home, away) {
 
   // After 3 seconds, remove the show class from DIV
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-
+  
 }
 
 

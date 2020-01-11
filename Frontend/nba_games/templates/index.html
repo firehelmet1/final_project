@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+  
   <link rel="shortcut icon" href="../static/Images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="../static/Images/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
@@ -31,11 +41,14 @@
     <div class="row">
       <center>
         <div class="well">
-          <img src="../static/Images/nba-logo-transparent-300x300.png" style="width:20%; float:right;"
+          <center>
+          <img src="../static/Images/nba-logo-transparent-300x300.png" style="width:20%; float:right;clear:right;"
             class="img-rounded" alt="NBA logo">
 
-          <h1>NBA Game Predictor</h1>
-          <h2>Use our Random Forest Classifier to predict a Winner</h2>
+          <h1>NBA* Game Predictor</h1>
+          <h2>Use 15 years of NBA game data, Machine Learning and a Random Forest Classifier to predict a Winner</h2>
+        </center><h3>*no affiliation with the NBA*</h3>
+
         </div>
       </center>
     </div>
@@ -87,9 +100,14 @@
             <circle cx="50" cy="50" r="40" stroke="rgb(117, 74, 17)" stroke-width="4" fill="rgb(255, 81, 0)" />
           </svg> -->
           <!-- <img src="../static/Images/basketball-512.png" alt="bBall"  style="width:100%"> -->
-          <button class="btn" onclick="predictHandler()">PREDICT<br>WINNER</button>
+          <div class="container">
+              
+              <button class="btn" onclick="predictHandler()">PREDICT<br>WINNER</button>
+              <!-- <span class="spinner-grow text-warning"></span><br> -->
+          </div>
           <!-- The actual snackbar -->
           <div id="snackbar">STAND BY...</div>
+
         </center>
       </div>
       </div>
