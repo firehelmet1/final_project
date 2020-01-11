@@ -58,8 +58,11 @@ visitor_score = game['PTS_away'].mean()
 spread = home_score - visitor_score
 
 # Predict
-if predictor > 0.5:
-    win_predictor = home
+if predictor >= 0.5:
+    if spread >= 3:
+        win_predictor = home
+    else:
+        win_predictor = visitor
 else:
     win_predictor = visitor
             
