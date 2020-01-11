@@ -65,3 +65,4 @@ else:
             
 #game prediction accuracy
 print(win_predictor, score, spread)
+feature_weights = (sorted(zip(rf.feature_importances_, X.columns), reverse = True))
