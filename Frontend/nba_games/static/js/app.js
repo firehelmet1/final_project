@@ -43,18 +43,33 @@ function buildMetadataHome(placehold) {
 
 // Submit Button handler
 function predictHandler() {
-  const predictSample =document.getElementById("selDatasetHome").value;
+  const predictSampleH =document.getElementById("selDatasetHome").value;
+  const predictSampleA =document.getElementById("selDatasetAway").value;
   
-  var url = `/metadata/${predictSample}`;
+  // var url = `/metadata/${predictSample}`;
+  var urlH = `/metadata/${predictSampleH}`;
+  var urlA = `/metadata/${predictSampleA}`;
   // var metaData = url;
   var sound0 = new Audio('../static/Images/heShoots.mp4'); 
 
   // Fetch the JSON data and console log it
   // .then is Asynchronus call to request the data and keep going while waiting for data
-  d3.json(url).then((data) => {   
+  d3.json(urlH).then((data) => {
     // console.log("HELLO YOU IDIOT");
     const obj = Object.entries(data)[0];
-    console.log(obj[1]); 
+    console.log(obj[1]);
+    d3.json(urlH).then((data) => {
+      const obj = Object.entries(data)[0];
+      console.log(obj[1]);
+      home = obj[1];
+      myFunction(home, away);
+  });
+  d3.json(urlA).then((data) => {
+      const obj = Object.entries(data)[0];
+      console.log(obj[1]);
+      away = obj[1];
+    
+});
 
       if(obj[1] == 'BOS'){
           console.log("You Filthy Swine");
@@ -73,7 +88,7 @@ function predictHandler() {
           const obj = Object.entries(data)[0];
           console.log(obj[1]);
           home = obj[1];
-          myFunction(home, away);
+          // myFunction(home, away);
       });
       d3.json(urlA).then((data) => {
         const obj = Object.entries(data)[0];
