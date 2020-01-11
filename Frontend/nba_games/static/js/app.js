@@ -71,11 +71,11 @@ function predictHandler() {
     });
   }
 // Snackbar Button handler
-function myFunction(placehold,thing) {
+function myFunction(home, away) {
   // Get the snackbar DIV
-  console.log(placehold);
+  console.log(home, away);
   var x = document.getElementById("snackbar")
-  var y = document.getElementById("snackbar").innerHTML = placehold +" or "+ thing;
+  var y = document.getElementById("snackbar").innerHTML = home +" or "+ away;
 
   // Add the "show" class to DIV
   x.className = "show";
