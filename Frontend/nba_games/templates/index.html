@@ -33,7 +33,7 @@
             class="img-rounded" alt="NBA logo">
 
           <h1>NBA Game Predictor</h1>
-          <h2>Pick a Winner</h2>
+          <h2>Use our Random Forest Classifier to predict a Winner</h2>
         </div>
       </center>
     </div>
@@ -62,7 +62,7 @@
       <!-- <div class="panel-heading">
         <h3 class="panel-title">Sample MetaData</h3>
       </div> -->
-      <div class="col-sm-6">
+      <div class="col-sm-5">
         <center>
           <div id="teamLogo_Home" class="panel-body">LOGO-LOADING</div>
         </center>
@@ -72,7 +72,20 @@
         </center>
 
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-2">
+        <center>
+          <!-- <form>
+          <div id="moneyLine" class="panel-body">
+            <button id="submit" type="submit" class="btn btn-default">Predict Winner</button>
+            PREDICTION-LOADING</div>
+          </form> -->
+          <!-- Use a button to open the snackbar -->
+          <button onclick="predictHandler()">PREDICT WINNER</button>
+          <!-- The actual snackbar -->
+          <div id="snackbar">STAND BY...</div>
+        </center>
+      </div>
+      <div class="col-sm-5">
         <center>
           <div id="teamLogo_Away" class="panel-body">LOGO-LOADING</div>
         </center>

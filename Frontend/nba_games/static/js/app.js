@@ -1,8 +1,7 @@
-function buildMetadataHome(sample) {
-
+function buildMetadataHome(placehold) {
+// placehold defined in function below in init function as HomeSample
   // Use `d3.json` to fetch the metadata for a sample
-  var url = `/metadata/${sample}`;
-
+  var url = `/metadata/${placehold}`;
     // Use d3 to select the panel with id of `#sample-metadata`
     var sample_metadata_tableHome = d3.select("#sample-metadataHome");
     var teamLogo_Home = d3.select("#teamLogo_Home");
@@ -19,7 +18,6 @@ function buildMetadataHome(sample) {
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
-
     d3.json(url).then((data) => {
       // var span = sample_metadata_table.append("span");
       Object.entries(data).forEach(([key, value]) => {
@@ -35,43 +33,64 @@ function buildMetadataHome(sample) {
         var text = bgStyle.append("style");
         text.text("body {background-image: url('../static/Images/Courts/" + obj[1] + ".jpg'), url('../static/Images/Gymfloor1.jpg');}");
         // style.attr("url",'../static/Images/Gymfloor1.jpg');
-        // console.log(Object.entries(data)[0]); 
         console.log(obj[1]); 
+        homeTeam = obj[1];
+        console.log(homeTeam);
 
       // });  background-size: 35%, 100%; 
-      
     });
-    
 }
 
-// function buildMetadataAway(sample) {
+// Submit Button handler
+function predictHandler() {
+  // placehold defined in function below in init function as AwaySample
+  var selectorH = d3.select("#selDatasetHome");
+  var selectorA = d3.select("#selDatasetAway");
 
-//   // @TODO: Complete the following function that builds the metadata panel
+  // Use the list of sample names to populate the select options
+  d3.json("/names").then((nickNamesHome) => {
 
-//   // Use `d3.json` to fetch the metadata for a sample
-//   var url = `/metadata/${sample}`;
+    const HomeSample =document.getElementById("selDatasetHome").value;
+    const AwaySample =document.getElementById("selDatasetAway").value;
 
-//     // Use d3 to select the panel with id of `#sample-metadata`
-//     var sample_metadata_tableAway = d3.select("#sample-metadataAway");
+    var urlH = `/metadata/${HomeSample}`;
+    console.log(urlH);
+    var urlA = `/metadata/${AwaySample}`;
+  
+      d3.json(urlH).then((data) => {
+          const obj = Object.entries(data)[0];
+          console.log(obj[1]);
+          home = obj[1];
+      });
+      d3.json(urlA).then((data) => {
+        const obj = Object.entries(data)[0];
+        console.log(obj[1]);
+        away = obj[1];
+        myFunction(home, away);
+    });
+    });
+  }
+// Snackbar Button handler
+function myFunction(placehold,thing) {
+  // Get the snackbar DIV
+  console.log(placehold);
+  var x = document.getElementById("snackbar")
+  var y = document.getElementById("snackbar").innerHTML = placehold +" or "+ thing;
 
-//     // console.log(sample_metadata_tableAway)
+  // Add the "show" class to DIV
+  x.className = "show";
 
-//     // Use `.html("") to clear any existing metadata
-//     sample_metadata_tableAway.html("");
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 
-//     d3.json(url).then((data) => {
-//       Object.entries(data).forEach(([key, value]) => {
-//         var cell = sample_metadata_tableAway.append("li");
-//         cell.text(key + ": " + value);
+}
 
-//       });
-//   });
-    
-// }
-function buildMetadataAway(sample) {
+
+function buildMetadataAway(placehold) {
+// placehold defined in function below in init function as AwaySample
 
   // Use `d3.json` to fetch the metadata for a sample
-  var url = `/metadata/${sample}`;
+  var url = `/metadata/${placehold}`;
 
     // Use d3 to select the panel with id of `#sample-metadata`
     var sample_metadata_tableAway = d3.select("#sample-metadataAway");
@@ -150,6 +169,7 @@ function optionChangedHome(newSample) {
   // Fetch new data each time a new sample is selected
   // buildCharts(newSample);
   buildMetadataHome(newSample);
+  // console.log(newSample)
 }
 function optionChangedAway(newSample) {
   // Fetch new data each time a new sample is selected
