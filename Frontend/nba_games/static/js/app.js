@@ -44,19 +44,17 @@ function buildMetadataHome(placehold) {
 // Submit Button handler
 function predictHandler() {
   // placehold defined in function below in init function as AwaySample
-  var selectorH = d3.select("#selDatasetHome");
-  var selectorA = d3.select("#selDatasetAway");
-
+  // var selectorH = d3.select("#selDatasetHome");
+  // var selectorA = d3.select("#selDatasetAway");
   // Use the list of sample names to populate the select options
-  d3.json("/names").then((nickNamesHome) => {
+  // d3.json("/names").then((nickNamesHome) => {
 
     const HomeSample =document.getElementById("selDatasetHome").value;
     const AwaySample =document.getElementById("selDatasetAway").value;
 
     var urlH = `/metadata/${HomeSample}`;
-    console.log(urlH);
     var urlA = `/metadata/${AwaySample}`;
-  
+    console.log(urlH, urlA);
       d3.json(urlH).then((data) => {
           const obj = Object.entries(data)[0];
           console.log(obj[1]);
@@ -68,9 +66,9 @@ function predictHandler() {
         away = obj[1];
         myFunction(home, away);
     });
-    });
+    // });
   }
-// Snackbar Button handler
+// Snackbar Handler
 function myFunction(home, away) {
   // Get the snackbar DIV
   console.log(home, away);

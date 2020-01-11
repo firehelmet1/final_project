@@ -109,6 +109,8 @@ div {
   
   font-family: "Impact";  
   color: rgb(255, 217, 0);
+  color: rgb(117, 74, 17);
+
   background: rgba(3, 30, 34, 0);
   /* border: 4px; */
 }
@@ -189,6 +191,29 @@ div {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
+.container .btn {
+  position: absolute;
+  top: 300%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(207, 124, 0, 0.5);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 19px 14px;
+  border: dashed rgb(246, 168, 0);
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(43, 15, 0, 0.4), 0 6px 10px 0 rgba(43, 15, 0, 0.4);
+  transition-duration: 0.4s;
+}
+
+.container .btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(43, 15, 0, 0.4), 0 20px 20px 0 rgba(43, 15, 0, 0.6);
+  
+}
+
 /* .tooltip {
   display: none;
   position: absolute;
