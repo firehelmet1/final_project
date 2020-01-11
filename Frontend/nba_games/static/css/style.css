@@ -9,7 +9,7 @@ body {
   /* margin: 0; */
   background: #000000;
   /* background-image: url("../Images/basketball-court-bg.jpg"); */
-  background-image: url("../Images/Gymfloor1.jpg");
+  background-image: url("../Images/Gymfloor_sm.jpg");
   background-size: 35%, 100%; 
   /* background-origin: content-box; */
   background-position: center 89%, right top;
@@ -107,11 +107,8 @@ div {
 .plot-container {
   width: 100%;
   padding: 10px;
-  
   font-family: "Impact";  
   color: rgb(255, 217, 0);
-  color: rgb(117, 74, 17);
-
   background: rgba(3, 30, 34, 0);
   /* border: 4px; */
 }
@@ -194,7 +191,7 @@ div {
 }
 .container .btn {
   position: absolute;
-  top: 120%;
+  top: 60px;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -216,6 +213,19 @@ div {
 .container .btn:hover {
   box-shadow: 0 8px 16px 0 rgba(43, 15, 0, 0.4), 0 20px 20px 0 rgba(43, 15, 0, 0.6);
   
+}
+
+@media only screen and (max-width: 800px) {
+  div.col-sm-5 {
+    max-width: 77%;
+    /* top: 120%; */
+
+  }
+  div.container {
+    top: 60px;
+    min-height: 110px;
+
+  }
 }
 
 /* .tooltip {
