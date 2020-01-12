@@ -6,10 +6,13 @@ from datetime import datetime, date
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from flask import jsonify
-
+import app
 ## Read in Games and Teams api 
-game_data = requests.get('/games').json()
-team_data = requests.get('/metadata/<NICKNAME>').json()
+# game_data = requests.get('http://127.0.0.1:5000//games').json()
+# team_data = requests.get('http://127.0.0.1:5000//metadata/<NICKNAME>').json()
+game_data = app.samples()
+team_data = app.sample_metadata("Mavericks", "Lakers")
+
 
 # Use Pandas to read json data
 game = pd.read_json(game_data)
