@@ -116,10 +116,14 @@ function myFunction(home, away) {
   d3.json(urlPredictor).then((data) => {
     const obj = Object.entries(data)[0];
     const obj1 = Object.entries(data)[1];
+    const obj2 = Object.entries(data)[2];
+
 
     console.log(obj[1]);
     winner = obj[1];
     score = obj1[1].toFixed(2);
+    spread = obj2[1].toFixed(2);;
+
     console.log("The winner is: " + winner +" R2 score: "+ score);
 
   // Get the snackbar DIV
@@ -129,7 +133,7 @@ function myFunction(home, away) {
   var y = document.getElementById("snackbar").innerHTML = winner +" WINS "+'<br>'+" R2 score: "+ score;
   
   var div = document.getElementById("snackbar").innerHTML = 
-  "<img src="+  "../static/Images/Logos/" + winner + ".png>" +"<br>" + winner +" WINS "+'<br>'+" R2 score: "+ score ;
+  "<img src="+  "../static/Images/Logos/" + winner + ".png>" +"<br>" + winner +" WINS "+'<br>'+"R2 score: "+ score +'<br>'+"Spread: "+ + spread ;
   
   // div.attr("src", "../static/Images/Logos/" + "ATL" + ".png");
   // div.attr("style", "width:80%" );
