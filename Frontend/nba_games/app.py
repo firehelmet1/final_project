@@ -16,7 +16,7 @@ from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 # Importing our prediction function
-# from games_predict_single import prediction_model
+from .games_predict_single import prediction_model
 
 app = Flask(__name__)
 
@@ -82,148 +82,143 @@ def sample_metadata(NICKNAME):
     return jsonify(sample_metadata)
 
 
-@app.route("/games/<a>/<b>")
-def samples(a, b):
+# @app.route("/games/<a>/<b>")
+# def samples(a, b):
 
-    """Return the game data."""
-    sample_data = [
-        Samples.GAME_ID,
-        Samples.HOME_TEAM_ID,
-        Samples.VISITOR_TEAM_ID,
-        Samples.PTS_home,
-        Samples.FG_PCT_home,
-        Samples.FT_PCT_home,
-        Samples.FG3_PCT_home,
-        Samples.AST_home,
-        Samples.REB_home,
-        Samples.PTS_away,
-        Samples.FG_PCT_away,
-        Samples.FT_PCT_away,
-        Samples.FG3_PCT_away,
-        Samples.AST_away,
-        Samples.REB_away,
-        Samples.HOME_TEAM_WINS
-    ]
-    # Return the team data
-    sel = [
-        Samples_Metadata.TEAM_ID,
-        Samples_Metadata.ABBREVIATION,
-        Samples_Metadata.NICKNAME,
-        Samples_Metadata.CITY
-    ]
+#     """Return the game data."""
+#     sample_data = [
+#         Samples.GAME_ID,
+#         Samples.HOME_TEAM_ID,
+#         Samples.VISITOR_TEAM_ID,
+#         Samples.PTS_home,
+#         Samples.FG_PCT_home,
+#         Samples.FT_PCT_home,
+#         Samples.FG3_PCT_home,
+#         Samples.AST_home,
+#         Samples.REB_home,
+#         Samples.PTS_away,
+#         Samples.FG_PCT_away,
+#         Samples.FT_PCT_away,
+#         Samples.FG3_PCT_away,
+#         Samples.AST_away,
+#         Samples.REB_away,
+#         Samples.HOME_TEAM_WINS
+#     ]
+#     # Return the team data
+#     sel = [
+#         Samples_Metadata.TEAM_ID,
+#         Samples_Metadata.ABBREVIATION,
+#         Samples_Metadata.NICKNAME,
+#         Samples_Metadata.CITY
+#     ]
 
-    # Query the database for the games data
-    results = db.session.query(*sample_data).all()
-    results2 = db.session.query(*sel).all()
+#     # Query the database for the games data
+#     results = db.session.query(*sample_data).all()
+#     results2 = db.session.query(*sel).all()
 
-    # Format the data into a Pandas Dataframe
-    game_data = pd.DataFrame()
-    for game_id, home_team_id, visitor_team, pts_home, fg_pct_home, ft_pct_home, fg3_pct_home, ast_home, reb_home,  pts_away, fg_pct_away, ft_pct_away, fg3_pct_away, ast_away, reb_away, home_wins in results:
-        game_data["GAME_ID"] = game_id
-        game_data["HOME_TEAM_ID"] = home_team_id
-        game_data["VISITOR_TEAM_ID"] = visitor_team
-        game_data["PTS_home"] = pts_home
-        game_data["FG_PCT_home"] = fg_pct_home
-        game_data["FT_PCT_home"] = ft_pct_home
-        game_data["FG3_PCT_home"] = fg3_pct_home
-        game_data["AST_home"] = ast_home
-        game_data["REB_home"] = reb_home
-        game_data["PTS_away"] = pts_away
-        game_data["FG_PCT_away"] = fg_pct_away
-        game_data["FT_PCT_away"] = ft_pct_away
-        game_data["FG3_PCT_away"] = fg3_pct_away
-        game_data["AST_away"] = ast_away
-        game_data["REB_away"] = reb_away
-        game_data["HOME_TEAM_WINS"] = home_wins
+#     # Format the data into a Pandas Dataframe
+#     game_data = pd.DataFrame()
+#     for game_id, home_team_id, visitor_team, pts_home, fg_pct_home, ft_pct_home, fg3_pct_home, ast_home, reb_home,  pts_away, fg_pct_away, ft_pct_away, fg3_pct_away, ast_away, reb_away, home_wins in results:
+#         game_data["GAME_ID"] = game_id
+#         game_data["HOME_TEAM_ID"] = home_team_id
+#         game_data["VISITOR_TEAM_ID"] = visitor_team
+#         game_data["PTS_home"] = pts_home
+#         game_data["FG_PCT_home"] = fg_pct_home
+#         game_data["FT_PCT_home"] = ft_pct_home
+#         game_data["FG3_PCT_home"] = fg3_pct_home
+#         game_data["AST_home"] = ast_home
+#         game_data["REB_home"] = reb_home
+#         game_data["PTS_away"] = pts_away
+#         game_data["FG_PCT_away"] = fg_pct_away
+#         game_data["FT_PCT_away"] = ft_pct_away
+#         game_data["FG3_PCT_away"] = fg3_pct_away
+#         game_data["AST_away"] = ast_away
+#         game_data["REB_away"] = reb_away
+#         game_data["HOME_TEAM_WINS"] = home_wins
 
-    team_data = pd.DataFrame()
-    for team_id, abbreviation, nickname, city in results2:
-        team_data["TEAM_ID"] = team_id
-        team_data["ABBREVIATION"] = abbreviation
-        team_data["NICKNAME"] = nickname
-        team_data["CITY"] = city
+#     team_data = pd.DataFrame()
+#     for team_id, abbreviation, nickname, city in results2:
+#         team_data["TEAM_ID"] = team_id
+#         team_data["ABBREVIATION"] = abbreviation
+#         team_data["NICKNAME"] = nickname
+#         team_data["CITY"] = city
 
-    #Input Home, Visitor Teams  
-    home = a 
-    visitor = b
+#     #Input Home, Visitor Teams  
+#     home = a 
+#     visitor = b
 
-    for i in range(len(team_data)):
-        if team_data.iloc[i]['NICKNAME'] == home:
-            home_id = team_data.iloc[i]['TEAM_ID']
+#     for i in range(len(team_data)):
+#         if team_data.iloc[i]['NICKNAME'] == home:
+#             home_id = team_data.iloc[i]['TEAM_ID']
 
-        if team_data.iloc[i]['NICKNAME'] == visitor:
-            visitor_id = team_data.iloc[i]['TEAM_ID']
+#         if team_data.iloc[i]['NICKNAME'] == visitor:
+#             visitor_id = team_data.iloc[i]['TEAM_ID']
 
-    #Filter games to matched home, visitor teams
-    games = game_data[game_data['HOME_TEAM_ID'] == home_id]
-    games = games[games['VISITOR_TEAM_ID'] == visitor_id]
+#     #Filter games to matched home, visitor teams
+#     games = game_data[game_data['HOME_TEAM_ID'] == home_id]
+#     games = games[games['VISITOR_TEAM_ID'] == visitor_id]
     
-    #Drop dates, team_ids, game_ids, season - will not be useful
-    game_data.drop(['GAME_ID','HOME_TEAM_ID', 
-                'VISITOR_TEAM_ID'], axis=1)
-    game_data.dropna(inplace=True)
+#     #Drop dates, team_ids, game_ids, season - will not be useful
+#     game_data.drop(['GAME_ID','HOME_TEAM_ID', 
+#                 'VISITOR_TEAM_ID'], axis=1)
+#     game_data.dropna(inplace=True)
     
-    #Split Dataset for training, test
-    y = game_data["HOME_TEAM_WINS"]
-    X = game_data.drop("HOME_TEAM_WINS", axis=1)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
+#     #Split Dataset for training, test
+#     y = game_data["HOME_TEAM_WINS"]
+#     X = game_data.drop("HOME_TEAM_WINS", axis=1)
+#     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
 
-    #Calculate Historical Win%
-    wins = 0
-    for j in range(len(y)):
-        wins = wins + round(y.iloc[j])
-    record = wins / len(y)    
+#     #Calculate Historical Win%
+#     wins = 0
+#     for j in range(len(y)):
+#         wins = wins + round(y.iloc[j])
+#     record = wins / len(y)    
 
-    #Random Forest Classification
-    rf = RandomForestClassifier(n_estimators=128)
-    rf = rf.fit(X_train, y_train)
+#     #Random Forest Classification
+#     rf = RandomForestClassifier(n_estimators=128)
+#     rf = rf.fit(X_train, y_train)
     
-    # Fitting our model with all of our features in X
-    score = rf.score(X_test, y_test)
-    predictor=(rf.predict(X).mean()- 0.5*np.var(rf.predict(X))/record)
+#     # Fitting our model with all of our features in X
+#     score = rf.score(X_test, y_test)
+#     predictor=(rf.predict(X).mean()- 0.5*np.var(rf.predict(X))/record)
 
-    # Calculate Spread
-    home_score = game_data['PTS_home'].mean()
-    visitor_score = game_data['PTS_away'].mean()
-    spread = home_score - visitor_score
+#     # Calculate Spread
+#     home_score = game_data['PTS_home'].mean()
+#     visitor_score = game_data['PTS_away'].mean()
+#     spread = home_score - visitor_score
 
-    # Predict
-    if predictor >= 0.5:
-        if spread >= 3:
-            win_predictor = home
-        else:
-            win_predictor = visitor
-    else:
-        win_predictor = visitor
+#     # Predict
+#     if predictor >= 0.5:
+#         if spread >= 3:
+#             win_predictor = home
+#         else:
+#             win_predictor = visitor
+#     else:
+#         win_predictor = visitor
             
-    #game prediction accuracy
-    print(win_predictor, score, spread)
-    feature_weights = (sorted(zip(rf.feature_importances_, X.columns), reverse = True))
+#     #game prediction accuracy
+#     print(win_predictor, score, spread)
+#     feature_weights = (sorted(zip(rf.feature_importances_, X.columns), reverse = True))
 
-    # Put the prediction, score, spread, and feature weights into a dictionary
-    predict_dict = {}
-    predict_dict["prediction"] = win_predictor
-    predict_dict["score"] = score
-    predict_dict["spread"] = spread
-    predict_dict["weights"] = feature_weights
+#     # Put the prediction, score, spread, and feature weights into a dictionary
+#     predict_dict = {}
+#     predict_dict["prediction"] = win_predictor
+#     predict_dict["score"] = score
+#     predict_dict["spread"] = spread
+#     predict_dict["weights"] = feature_weights
 
-    # Return a jsonified version of the dictionary
-    return jsonify(predict_dict)
+#     # Return a jsonified version of the dictionary
+#     return jsonify(predict_dict)
     
 
     
 
-# @app.route("/predictor/<home>/<away>")
-# def prediction(home, away):
-#     import games_predict_single
-
-#     # home = f"/metadata/<{NICKNAME}>"
-#     # away = f"/metadata/<{NICKNAME}>"
-#     home = "Mavericks"
-#     away = "Lakers"
-#     output = games_predict_single.prediction_model(home, away)
-#     print(output)
-#     return output
+@app.route("/predictor/<home>/<away>")
+def prediction(home, away):
+    
+    output = prediction_model(home, away)
+    print(output)
+    return output
 
 
 if __name__ == "__main__":

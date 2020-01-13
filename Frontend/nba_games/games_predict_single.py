@@ -6,17 +6,19 @@ from datetime import datetime, date
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from flask import jsonify
-import app
-## Read in Games and Teams api 
-# game_data = requests.get('http://127.0.0.1:5000//games').json()
-# team_data = requests.get('http://127.0.0.1:5000//metadata/<NICKNAME>').json()
-game_data = app.samples()
-team_data = app.sample_metadata("Mavericks", "Lakers")
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
 
+# Create an engine
+engine = create_engine("sqlite:///./db/nba_data2.sqlite")
 
-# Use Pandas to read json data
-game = pd.read_json(game_data)
-teams = pd.read_json(team_data)
+## Use Pandas to read in games and teams data
+# pd.read_sql_table(table_name, con=connection)
+# See documentation for more: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html#pandas.read_sql_table
+game = pd.read_sql_table("Games", con=engine)
+teams = pd.read_sql_table("Teams", con=engine)
 
 # Build a function that will run the prediction model
 def prediction_model(home, away):
