@@ -15,8 +15,14 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.debug('This is a log message.')
+
 # Importing our prediction function
-from .games_predict_single import prediction_model
+from games_predict_single import prediction_model
+
+
 
 app = Flask(__name__)
 
