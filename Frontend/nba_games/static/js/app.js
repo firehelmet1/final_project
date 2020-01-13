@@ -102,16 +102,30 @@ function predictHandler() {
   home = '';
 // Snackbar Handler
 function myFunction(home, away) {
+
+  // Predict Winner
+  var urlPredictor = `/predictor/${home}/${away}`;
+  console.log(urlPredictor);
+  d3.json(urlPredictor).then((data) => {
+    const obj = Object.entries(data)[0];
+    console.log(obj[1]);
+    winner = obj[1];
+    console.log("The winner is: " + winner);
+
   // Get the snackbar DIV
   console.log(home, away);
   var x = document.getElementById("snackbar")
-  var y = document.getElementById("snackbar").innerHTML = home +" or "+ away;
+  var y = document.getElementById("snackbar").innerHTML = winner +" WINS ";
 
   // Add the "show" class to DIV
   x.className = "show";
 
   // After 3 seconds, remove the show class from DIV
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+
+    // myFunction(home, away);
+});
   
 }
 
