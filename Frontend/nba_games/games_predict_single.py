@@ -39,13 +39,13 @@ def prediction_model(home, away):
     games = games[games['VISITOR_TEAM_ID'] == visitor_id]
     
     #Drop dates, team_ids, game_ids, season - will not be useful
-    game.drop(['GAME_ID','HOME_TEAM_ID', 
+    games.drop(['GAME_ID','HOME_TEAM_ID', 
                 'VISITOR_TEAM_ID'], axis=1)
-    game.dropna(inplace=True)
+    games.dropna(inplace=True)
     
     #Split Dataset for training, test
-    y = game["HOME_TEAM_WINS"]
-    X = game.drop("HOME_TEAM_WINS", axis=1)
+    y = games["HOME_TEAM_WINS"]
+    X = games.drop("HOME_TEAM_WINS", axis=1)
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
 
     #Calculate Historical Win%
@@ -63,8 +63,8 @@ def prediction_model(home, away):
     predictor=(rf.predict(X).mean()- 0.5*np.var(rf.predict(X))/record)
 
     # Calculate Spread
-    home_score = game['PTS_home'].mean()
-    visitor_score = game['PTS_away'].mean()
+    home_score = games['PTS_home'].mean()
+    visitor_score = games['PTS_away'].mean()
     spread = home_score - visitor_score
 
     # Predict
