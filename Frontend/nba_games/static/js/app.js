@@ -50,12 +50,12 @@ function predictHandler() {
   var urlH = `/metadata/${predictSampleH}`;
   var urlA = `/metadata/${predictSampleA}`;
   // var metaData = url;
-  var sound0 = new Audio('../static/Images/heShoots.mp4'); 
+  var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
 
   // Fetch the JSON data and console log it
   // .then is Asynchronus call to request the data and keep going while waiting for data
   d3.json(urlH).then((data) => {
-    // console.log("HELLO YOU IDIOT");
+    // console.log("HE SHOOTS HE SCORES");
     const obj = Object.entries(data)[0];
     console.log(obj[1]);
     d3.json(urlH).then((data) => {
@@ -70,11 +70,14 @@ function predictHandler() {
       away = obj[1];
     
 });
+// var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
 
-      if(obj[1] == 'BOS'){
-          console.log("You Filthy Swine");
-          sound0.play();  
-      }
+      // if(obj[1] == 'BOS'){
+      // // if(obj[1]){
+
+      //     console.log("VEGAS BABY");
+      //     sound0.play();  
+      // }
       // predictHandler('BOS')
   });
 
@@ -103,25 +106,39 @@ function predictHandler() {
 // Snackbar Handler
 function myFunction(home, away) {
 
+  var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
+  console.log("VEGAS BABY");
+  sound0.play();  
+ 
   // Predict Winner
   var urlPredictor = `/predictor/${home}/${away}`;
   console.log(urlPredictor);
   d3.json(urlPredictor).then((data) => {
     const obj = Object.entries(data)[0];
+    const obj1 = Object.entries(data)[1];
+
     console.log(obj[1]);
     winner = obj[1];
-    console.log("The winner is: " + winner);
+    score = obj1[1].toFixed(2);
+    console.log("The winner is: " + winner +" R2 score: "+ score);
 
   // Get the snackbar DIV
   console.log(home, away);
+
   var x = document.getElementById("snackbar")
-  var y = document.getElementById("snackbar").innerHTML = winner +" WINS ";
+  var y = document.getElementById("snackbar").innerHTML = winner +" WINS "+'<br>'+" R2 score: "+ score;
+  
+  var div = document.getElementById("snackbar").innerHTML = 
+  "<img src="+  "../static/Images/Logos/" + winner + ".png>" +"<br>" + winner +" WINS "+'<br>'+" R2 score: "+ score ;
+  
+  // div.attr("src", "../static/Images/Logos/" + "ATL" + ".png");
+  // div.attr("style", "width:80%" );
 
   // Add the "show" class to DIV
   x.className = "show";
 
   // After 3 seconds, remove the show class from DIV
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
 
 
     // myFunction(home, away);
