@@ -41,12 +41,13 @@ def prediction_model(home, away):
     #Drop dates, team_ids, game_ids, season - will not be useful
     games.drop(['GAME_ID','HOME_TEAM_ID', 
                 'VISITOR_TEAM_ID'], axis=1)
-    games.dropna(inplace=True)
+    # games.dropna(inplace=True)
     
     #Split Dataset for training, test
     y = games["HOME_TEAM_WINS"]
     X = games.drop("HOME_TEAM_WINS", axis=1)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, train_size=0.8, random_state=1)
 
     #Calculate Historical Win%
     wins = 0
