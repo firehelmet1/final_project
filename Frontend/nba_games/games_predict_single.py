@@ -1,6 +1,5 @@
 #Import Dependencies
 import numpy as np
-import requests
 import pandas as pd
 from datetime import datetime, date
 from sklearn.model_selection import train_test_split
