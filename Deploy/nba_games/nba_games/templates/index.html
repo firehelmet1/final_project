@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+  
+  <link rel="shortcut icon" href="../static/Images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../static/Images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NBA Predictor</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|
+              Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|
+              Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
+  <link href="//db.onlinewebfonts.com/c/3b6a3b46f2fbe16704b7d85493e7c38e?family=Ren+&+Stimpy" rel="stylesheet"
+    type="text/css" />
+  
+    <style id="bgStyle">
+      /* body {
+        background-image: url('../static/Images/Courts/ATL.jpg'), url('../static/Images/Gymfloor1.jpg');
+      } */
+      </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <center>
+        <div class="well">
+          <center>
+          <img src="../static/Images/nba-logo-transparent-300x300.png" style="width:20%; float:right;clear:right;"
+            class="img-rounded" alt="NBA logo">
+
+          <h1>NBA* Game Predictor</h1>
+          <h2>Use 15 years of NBA game data, Machine Learning and a Random Forest Classifier to predict a Winner</h2>
+        </center><h3>*no affiliation with the NBA*</h3>
+
+        </div>
+      </center>
+    </div>
+  </div>
+  <center>
+    <div class="well">
+      <div class="row">
+
+        <div class="col-sm-6">
+          <center>
+            <h5>SELECT Home Team:</h5>
+            <select id="selDatasetHome" onchange="optionChangedHome(this.value)"></select>
+          </center>
+        </div>
+        <div class="col-sm-6">
+          <center>
+            <h5>SELECT Away Team:</h5>
+            <select id="selDatasetAway" onchange="optionChangedAway(this.value)"></select>
+          </center>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <!-- <div class="panel-heading">
+        <h3 class="panel-title">Sample MetaData</h3>
+      </div> -->
+      <div class="col-sm-5">
+        <center>
+          <div id="teamLogo_Home" class="panel-body">LOGO-LOADING</div>
+        </center>
+
+        <center>
+          <div id="sample-metadataHome" class="panel-body">METADATA-LOADING</div>
+        </center>
+
+      </div>
+      <div class="col-sm-2">
+        <div class="container">
+        <!-- <center> -->
+          <!-- <form>
+          <div id="moneyLine" class="panel-body">
+            <button id="submit" type="submit" class="btn btn-default">Predict Winner</button>
+            PREDICTION-LOADING</div>
+          </form> -->
+          <!-- Use a button to open the snackbar -->
+          <!-- <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="rgb(117, 74, 17)" stroke-width="4" fill="rgb(255, 81, 0)" />
+          </svg> -->
+          <div class="container">
+              <button class="btn" onclick="predictHandler()">PREDICT<br>WINNER</button>
+              <!-- <span class="spinner-grow text-warning"></span><br> -->
+              <!-- <br><img src="../static/Images/basketball-512.png" alt="bBall"  style="width:60%"> -->
+          </div>
+          <!-- The actual snackbar -->
+          <div id="snackbar">STAND BY...
+            <img src="" id="notify_photo">
+          </div>
+
+        <!-- </center> -->
+      </div>
+      </div>
+      <div class="col-sm-5">
+        <center>
+          <div id="teamLogo_Away" class="panel-body">LOGO-LOADING</div>
+        </center>
+        <center>
+          <div id="sample-metadataAway" class="panel-body">METADATA-LOADING</div>
+        </center>
+      </div>
+    </div>
+    </div>
+  </center>
+  <div class="col-md-6">
+    <!-- <div id="pie"></div> -->
+  </div>
+
+  <div class="col-md-6">
+    <!-- <div id="gauge"></div> -->
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <div id="bubble"></div> -->
+    </div>
+  </div>
+
+
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>

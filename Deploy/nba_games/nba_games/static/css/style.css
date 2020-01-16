@@ -1,0 +1,271 @@
+@import url(//db.onlinewebfonts.com/c/3b6a3b46f2fbe16704b7d85493e7c38e?family=Ren+&+Stimpy);
+@font-face {font-family: "Ren & Stimpy"; src: url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.eot"); src: url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.woff") format("woff"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3b6a3b46f2fbe16704b7d85493e7c38e.svg#Ren & Stimpy") format("svg"); }
+html,
+body {
+  font-family: "Impact";
+  color: rgb(255, 217, 0);
+  /* height: 100%; */
+  /* padding: 0; */
+  /* margin: 0; */
+  background: #000000;
+  /* background-image: url("../Images/basketball-court-bg.jpg"); */
+  background-image: url("../Images/Gymfloor_sm.jpg");
+  background-size: 35%, 100%; 
+  /* background-origin: content-box; */
+  background-position: center 89%, right top;
+  background-repeat: no-repeat, repeat;
+  /* background-attachment: fixed; */
+  /* background: linear-gradient(114deg, rgba(240,202,0,1) 0%, rgba(19,121,9,1) 39%, rgba(3,121,219,1) 60%, rgba(150,255,0,1) 100%); */
+}
+
+h1 { 
+  font-family: "Impact";
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  /* color: rgb(255, 217, 0); */
+  /* color: linear-gradient(90deg, rgba(6,0,112,1) 49%, rgba(255,0,0,1) 51%); */
+  text-shadow: 3px 3px 2px black;  
+
+}
+h2 {
+  font-size: 25px;
+  color: rgb(255, 217, 0);
+  /* text-shadow: 2px 2px rgb(0, 45, 87); */
+  text-shadow: 3px 3px 2px black;  
+
+}
+h3 {
+  font-family: "Impact";
+  font-size: 20px;
+  color: rgb(255, 217, 0);
+  text-align: right;
+  text-shadow: 3px 3px 2px black;  
+}
+h4 {
+  font-size: 35px;
+  color: rgb(13, 21, 51, .7);
+  text-shadow: 2px 0px 2px white ;
+}
+h5 {
+  font-size: 25px;
+  color: rgb(255, 217, 0);
+  text-shadow: 3px 3px 2px black;  
+}
+
+#selDatasetAway, #selDatasetHome {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.jumbotron {
+  font-family: "Impact";
+  text-shadow: 4px 2px 4px #000000;
+  width: 90%;
+  font-size: 35px;
+  color: rgb(255, 217, 0);
+  font-weight: bold;
+  /* box-shadow: 5px 10px 40px  #5adfd6;
+  padding: 10px; */
+  background:rgba(100, 82, 2, 0.432);
+  /* background-image: url("maxresdefault.jpg");
+  background-size: 100%;  */
+}
+div {
+  background: rgba(68, 56, 1, 0);
+  color: rgb(255, 217, 0);
+  text-shadow: 2px 2px 2px black;  
+  /* border-style: solid; */
+  /* background: rgb(240,202,0);
+  background: linear-gradient(114deg, rgba(240,202,0,1) 0%, rgba(19,121,9,1) 39%, rgba(3,121,219,1) 60%, rgba(150,255,0,1) 100%); */
+}
+.container {
+  width: 100%;
+  padding: 10px;
+  color: rgb(255, 217, 0);  
+  background: rgba(68, 56, 1, 0);
+  /* border: 4px; */
+}
+
+.main-svg {
+  width: 100%;
+  padding: 10px;
+  font-family: "Impact";
+  color: rgb(255, 217, 0);
+  background: rgba(3, 30, 34, 0);
+  /* border: 4px; */
+}
+.svg-container {
+  width: 100%;
+  padding: 10px;
+  font-family: "Impact";  
+  color: rgb(255, 217, 0);
+  background: rgba(3, 30, 34, 0);
+  /* border: 4px; */
+}
+
+.plot-container {
+  width: 100%;
+  padding: 10px;
+  font-family: "Impact";  
+  color: rgb(255, 217, 0);
+  background: rgba(3, 30, 34, 0);
+  /* border: 4px; */
+}
+.panel {
+  width: 90%;
+  padding: 10px;
+  font-size: 20px;
+  text-shadow: 2px 0px 2px black ;
+  color: rgb(255, 217, 0);
+  background: rgba(100, 82, 2, 0.432);
+  overflow: auto;
+  border: 3px;
+  border-style: solid;
+}
+.panel-title {
+
+  font-size: 25px;
+  text-shadow: 2px 0px 2px black ;
+  color: white
+  /* background: rgba(100, 82, 2, 0.432); */
+  /* border: 4px; */
+}
+
+.well {
+  width: 90%;
+  padding: 15px;
+  color: rgb(255, 255, 255);
+  background: rgba(102, 82, 2, 0.432);
+  overflow: auto;
+  font-size: 25px;
+  text-shadow: 3px 3px 2px black;  
+  /* background: linear-gradient(45deg, rgba(6,0,112,1) 49%, rgba(255,0,0,1) 51%); */
+  border: 3px;
+  border-style: solid;
+}
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 332px; /* Set a default minimum width */
+  margin-left: -166px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 7px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+.container .btn {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(207, 124, 0, 0.5);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding: 19px 14px;
+  border: 5px dashed rgb(246, 168, 0);
+  cursor: pointer;
+  stroke-dashoffset: 6px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(43, 15, 0, 0.4), 0 6px 10px 0 rgba(43, 15, 0, 0.4);
+  transition-duration: 0.4s;
+  text-shadow: 0px 4px 9px rgba(92, 57, 0, 0.972);
+
+}
+
+.container .btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(43, 15, 0, 0.4), 0 20px 20px 0 rgba(43, 15, 0, 0.6);
+  
+}
+
+@media only screen and (max-width: 800px) {
+  div.col-sm-5 {
+    max-width: 77%;
+    /* top: 120%; */
+
+  }
+  div.container {
+    top: 60px;
+    min-height: 110px;
+
+  }
+}
+
+/* .tooltip {
+  display: none;
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  padding: 2px;
+  font: 12px sans-serif;
+  text-align: center;
+  background: orange;
+  border: 0;
+  border-radius: 10px;
+} */
+
+/* 
+text {
+  font-family: sans-serif;
+  font-size: 12px;
+  fill: white;
+}
+#tooltip {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -mox-box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rbga(0, 0, 0, 0.4) pointer-events: none;
+}
+#tooltip.hidden {
+  opacity: 0;
+}
+#tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+} */
