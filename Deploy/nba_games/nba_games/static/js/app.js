@@ -29,15 +29,14 @@ function buildMetadataHome(placehold) {
         const obj = Object.entries(data)[0];
         var div = teamLogo_Home.append("img");
         div.attr("src", "../static/Images/Logos/" + obj[1] + ".png");
-        div.attr("style", "width:80%" );
+        div.attr("style", "width:88%" );
         var text = bgStyle.append("style");
         text.text("body {background-image: url('../static/Images/Courts/" + obj[1] + ".jpg'), url('../static/Images/Gymfloor_sm.jpg');}");
         // style.attr("url",'../static/Images/Gymfloor1.jpg');
-        console.log(obj[1]); 
+        // console.log(obj[1]); 
         homeTeam = obj[1];
-        console.log(homeTeam);
+        // console.log(homeTeam);
 
-      // });  background-size: 35%, 100%; 
     });
 }
 
@@ -57,28 +56,27 @@ function predictHandler() {
   d3.json(urlH).then((data) => {
     // console.log("HE SHOOTS HE SCORES");
     const obj = Object.entries(data)[0];
-    console.log(obj[1]);
+    // console.log(obj[1]);
     d3.json(urlH).then((data) => {
       const obj = Object.entries(data)[0];
-      console.log(obj[1]);
+      // console.log(obj[1]);
       home = obj[1];
       myFunction(home, away);
   });
   d3.json(urlA).then((data) => {
       const obj = Object.entries(data)[0];
-      console.log(obj[1]);
+      // console.log(obj[1]);
       away = obj[1];
     
 });
-// var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
+var sound0 = new Audio('../static/Images/heShoots.mp4'); 
 
-      // if(obj[1] == 'BOS'){
-      // // if(obj[1]){
+      if(obj[1] == 'BOS'){
+      // if(obj[1]){
 
-      //     console.log("VEGAS BABY");
-      //     sound0.play();  
-      // }
-      // predictHandler('BOS')
+          console.log("VEGAS BABY");
+          sound0.play();  
+      }
   });
 
     const HomeSample =document.getElementById("selDatasetHome").value;
@@ -86,16 +84,16 @@ function predictHandler() {
 
     var urlH = `/metadata/${HomeSample}`;
     var urlA = `/metadata/${AwaySample}`;
-    console.log(urlH, urlA);
+    // console.log(urlH, urlA);
       d3.json(urlH).then((data) => {
           const obj = Object.entries(data)[0];
-          console.log(obj[1]);
+          // console.log(obj[1]);
           home = obj[1];
           // myFunction(home, away);
       });
       d3.json(urlA).then((data) => {
         const obj = Object.entries(data)[0];
-        console.log(obj[1]);
+        // console.log(obj[1]);
         away = obj[1];
         
     });
@@ -107,33 +105,36 @@ function predictHandler() {
 function myFunction(home, away) {
 
   var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
-  console.log("VEGAS BABY");
+  // console.log("VEGAS BABY");
   sound0.play();  
  
   // Predict Winner
   var urlPredictor = `/predictor/${home}/${away}`;
-  console.log(urlPredictor);
+  // console.log(urlPredictor);
   d3.json(urlPredictor).then((data) => {
     const obj = Object.entries(data)[0];
     const obj1 = Object.entries(data)[1];
     const obj2 = Object.entries(data)[2];
+    const obj3 = Object.entries(data)[3];
 
 
-    console.log(obj[1]);
-    winner = obj[1];
-    score = obj1[1].toFixed(2);
-    spread = obj2[1].toFixed(2);;
+    // console.log(obj[1]);
+    points_total = obj[1].toFixed(1);;
+    winner = obj1[1];
+    score = obj2[1].toFixed(2);
+    spread = obj3[1].toFixed(2);
+
 
     console.log("The winner is: " + winner +" R2 score: "+ score);
 
   // Get the snackbar DIV
-  console.log(home, away);
+  // console.log(home, away);
 
   var x = document.getElementById("snackbar")
   var y = document.getElementById("snackbar").innerHTML = winner +" WINS "+'<br>'+" R2 score: "+ score;
   
   var div = document.getElementById("snackbar").innerHTML = 
-  "<img src="+  "../static/Images/Logos/" + winner + ".png>" +"<br>" + winner +" WINS "+'<br>'+"R2 score: "+ score +'<br>'+"Spread: "+ + spread ;
+  "<img src="+  "../static/Images/Logos/" + winner + ".png>" +"<br>" + winner +" WINS "+'<br>'+"R2 score: "+ score +'<br>'+"Spread: "+ spread +'<br>'+"Points Total: "+ points_total ;  
   
   // div.attr("src", "../static/Images/Logos/" + "ATL" + ".png");
   // div.attr("style", "width:80%" );
@@ -181,9 +182,9 @@ function buildMetadataAway(placehold) {
         const obj = Object.entries(data)[0];
         var div = teamLogo_Away.append("img");
         div.attr("src", "../static/Images/Logos/" + obj[1] + ".png");
-        div.attr("style", "width:80%" );
+        div.attr("style", "width:88%" );
         // console.log(Object.entries(data)[0]); 
-        console.log(obj[1]); 
+        // console.log(obj[1]); 
 
       // });
       

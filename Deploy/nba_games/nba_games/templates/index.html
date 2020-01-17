@@ -2,16 +2,28 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156353965-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156353965-1');
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- // NOT IMPORTANT -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
-  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- END NOT IMPORTANT -->
+
   <link rel="shortcut icon" href="../static/Images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="../static/Images/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
@@ -22,52 +34,78 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/style.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|
+  <!-- <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|
               Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|
               Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
   <link href="//db.onlinewebfonts.com/c/3b6a3b46f2fbe16704b7d85493e7c38e?family=Ren+&+Stimpy" rel="stylesheet"
-    type="text/css" />
+    type="text/css" /> -->
   
     <style id="bgStyle">
       /* body {
         background-image: url('../static/Images/Courts/ATL.jpg'), url('../static/Images/Gymfloor1.jpg');
       } */
       </style>
+
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <meta property="og:url" content="https://nba-game-predictor.herokuapp.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NBA* Game Predictor" />
+  <meta property="og:description" content="Use Machine Learning to predict a game." />
+  <meta property="og:image" content="https://nba-game-predictor.herokuapp.com/static/Images/basketball-player-slamA.jpg" />
+  <meta property="fb:app_id" content="555724901680672" />
+  <!-- <meta property="fb:app_id" content="###############" />  --> 
+
 </head>
 
 <body>
 
   <div class="container">
+    <center>
+      <div class="jumbotron">
+        <center>
+        <img src="../static/Images/basketball-player-slamA.jpg" style="width:20%; float:right;clear:right;"
+          class="img-rounded" alt="NBA logo">
+
+
+        <h1>NBA* Game Predictor</h1>
+        <h2>Use 15 years of NBA game data, Machine Learning and a Random Forest Classifier to predict a Winner</h2>
+      
+      <h2>* no affiliation with the NBA * <br>
+
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Nice! I&#39;ve been looking for one of these." 
+        data-url="https://nba-game-predictor.herokuapp.com/" data-via="tacticalArtist" data-hashtags="sportsbet" data-related="tacticalArtist" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
+        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fnba-game-predictor.herokuapp.com%2F&width=140&layout=button_count&action=like&size=small&share=true&height=46&appId=555724901680672" 
+        width="140" height="20" style="border:none;overflow:hidden" 
+        scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </h2>
+    </center>
+
+      </div>
+    </center>
     <div class="row">
-      <center>
-        <div class="well">
-          <center>
-          <img src="../static/Images/nba-logo-transparent-300x300.png" style="width:20%; float:right;clear:right;"
-            class="img-rounded" alt="NBA logo">
 
-          <h1>NBA* Game Predictor</h1>
-          <h2>Use 15 years of NBA game data, Machine Learning and a Random Forest Classifier to predict a Winner</h2>
-        </center><h3>*no affiliation with the NBA*</h3>
-
-        </div>
-      </center>
     </div>
   </div>
+  <div>
   <center>
-    <div class="well">
+    <div class="well" >
       <div class="row">
 
-        <div class="col-sm-6">
-          <center>
+        <div class="col-sm-6" align="center">
+          <!-- <center> -->
             <h5>SELECT Home Team:</h5>
-            <select id="selDatasetHome" onchange="optionChangedHome(this.value)"></select>
-          </center>
+            <select id="selDatasetHome" onchange="optionChangedHome(this.value)" align="center"></select>
+          <!-- </center> -->
         </div>
-        <div class="col-sm-6">
-          <center>
+        <div class="col-sm-6" align="center">
+          <!-- <center> -->
             <h5>SELECT Away Team:</h5>
-            <select id="selDatasetAway" onchange="optionChangedAway(this.value)"></select>
-          </center>
+            <select id="selDatasetAway" onchange="optionChangedAway(this.value)" align="center"></select>
+          <!-- </center> -->
         </div>
 
       </div>
@@ -77,63 +115,55 @@
       <!-- <div class="panel-heading">
         <h3 class="panel-title">Sample MetaData</h3>
       </div> -->
-      <div class="col-sm-5">
-        <center>
+      <div class="row">
+      <div class="col-sm-5" style=" width:100%; float:left;clear:right">   <!-- style=" width:100%; float:left;clear:right"  -->
+        <!-- <center> -->
           <div id="teamLogo_Home" class="panel-body">LOGO-LOADING</div>
-        </center>
+        <!-- </center> -->
 
-        <center>
+        <!-- <center> -->
           <div id="sample-metadataHome" class="panel-body">METADATA-LOADING</div>
-        </center>
+        <!-- </center> -->
 
       </div>
-      <div class="col-sm-2">
-        <div class="container">
-        <!-- <center> -->
-          <!-- <form>
-          <div id="moneyLine" class="panel-body">
-            <button id="submit" type="submit" class="btn btn-default">Predict Winner</button>
-            PREDICTION-LOADING</div>
-          </form> -->
-          <!-- Use a button to open the snackbar -->
-          <!-- <svg width="100" height="100">
-            <circle cx="50" cy="50" r="40" stroke="rgb(117, 74, 17)" stroke-width="4" fill="rgb(255, 81, 0)" />
-          </svg> -->
+      
+      <div class="col-sm-2"  style=" width:100%;" align="center">
+        <center>
           <div class="container">
+
               <button class="btn" onclick="predictHandler()">PREDICT<br>WINNER</button>
-              <!-- <span class="spinner-grow text-warning"></span><br> -->
-              <!-- <br><img src="../static/Images/basketball-512.png" alt="bBall"  style="width:60%"> -->
           </div>
           <!-- The actual snackbar -->
           <div id="snackbar">STAND BY...
             <img src="" id="notify_photo">
           </div>
-
+        </center>
+      </div>
+   
+      <div class="col-sm-5" id="rCol" style=" width:100%; float:right;clear:left"> <!-- style=" float:right;clear:left;width:100%;"-->
+        <!-- <center> -->
+          <div id="teamLogo_Away" class="panel-body" >LOGO-LOADING</div>
+        <!-- </center> -->
+        <!-- <center> -->
+          <div id="sample-metadataAway" class="panel-body">METADATA-LOADING</div>
         <!-- </center> -->
       </div>
-      </div>
-      <div class="col-sm-5">
-        <center>
-          <div id="teamLogo_Away" class="panel-body">LOGO-LOADING</div>
-        </center>
-        <center>
-          <div id="sample-metadataAway" class="panel-body">METADATA-LOADING</div>
-        </center>
-      </div>
+    </div>
+    
     </div>
     </div>
-  </center>
-  <div class="col-md-6">
+  </center></div>
+  <div class="col-sm-6">
     <!-- <div id="pie"></div> -->
   </div>
 
-  <div class="col-md-6">
+  <div class="col-sm-6">
     <!-- <div id="gauge"></div> -->
   </div>
   </div>
   </div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <!-- <div id="bubble"></div> -->
     </div>
   </div>

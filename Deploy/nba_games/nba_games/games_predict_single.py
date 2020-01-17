@@ -74,6 +74,7 @@ def prediction_model(home, away):
     home_score = games['PTS_home'].mean()
     visitor_score = games['PTS_away'].mean()
     spread = home_score - visitor_score
+    points_total =  home_score + visitor_score
 
     # Predict
     if predictor > 0.5:
@@ -93,6 +94,7 @@ def prediction_model(home, away):
     predict_dict["prediction"] = win_predictor
     predict_dict["score"] = score
     predict_dict["spread"] = spread
+    predict_dict["points_total"] = points_total
     predict_dict["weights"] = feature_weights
 
     # Return a jsonified version of the dictionary
