@@ -19,9 +19,12 @@ body {
 }
 
 h1 { 
+
   font-family: "Impact";
-  font-size: 50px;
+  font-size: 48px;
   font-weight: bold;
+
+
   color: rgb(255, 255, 255);
   /* color: rgb(255, 217, 0); */
   /* color: linear-gradient(90deg, rgba(6,0,112,1) 49%, rgba(255,0,0,1) 51%); */
@@ -43,9 +46,9 @@ h3 {
   text-shadow: 3px 3px 2px black;  
 }
 h4 {
-  font-size: 35px;
-  color: rgb(13, 21, 51, .7);
-  text-shadow: 2px 0px 2px white ;
+  font-size: 10px;
+  color: rgba(255, 217, 0);
+  /* text-shadow: 2px 0px 2px white ; */
 }
 h5 {
   font-size: 25px;
@@ -57,7 +60,11 @@ h5 {
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
 }
+.img-rounded {
+  padding-right:10px;
+  padding-top:5px;
 
+}
 .jumbotron {
   font-family: "Impact";
   text-shadow: 4px 2px 4px #000000;
@@ -65,11 +72,10 @@ h5 {
   font-size: 35px;
   color: rgb(255, 255, 255);
   font-weight: bold;
-  padding: 3px;
+  padding: 1px;
   background:rgba(100, 82, 2, 0.432);
   border: 3px;
   border-style: solid;
-
 }
 div {
   background: rgba(68, 56, 1, 0);
@@ -235,6 +241,7 @@ div.col-sm-6 {
   
   h1 {
     font-size: 25px;
+
   }
   h2, h3 {
     font-size: 9px;
@@ -312,6 +319,69 @@ div.col-sm-6 {
     padding: 21px 17px;
   }
 }
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0.5em
+}
+
+.resp-sharing-button {
+  border-radius: 4px;
+  transition: 25ms ease-out;
+  padding: 0.25em 0.5em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.resp-sharing-button__icon svg {
+  width: 1.0em;
+  height: 1.0em;
+  margin-right: 0.4em;
+  vertical-align: middle
+}
+
+.resp-sharing-button--small svg {
+  margin: 0.1;
+  vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ec5711
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #ec5711
+}
+
+.resp-sharing-button--reddit {
+  background-color: #ec5711;
+  border-color: #ec5711;
+}
+
+.resp-sharing-button--reddit:hover,
+.resp-sharing-button--reddit:active {
+  background-color: #ec5711;
+  border-color: #ec5711;
+}
+
 
 /* .tooltip {
   display: none;

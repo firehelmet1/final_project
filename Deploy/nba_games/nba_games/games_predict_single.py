@@ -76,14 +76,37 @@ def prediction_model(home, away):
     spread = home_score - visitor_score
     points_total =  home_score + visitor_score
 
+# Player Advantage
+    engineRoster = create_engine("sqlite:///best_players.sqlite")
+
+    best_roster = pd.read_sql_table("best_players", con=engineRoster)
+    homeBonus =  best_roster[(best_roster.TEAM_ABBREVIATION == home)]
+    homePlayerBonus = homeBonus['PTS'].to_list()    
+    awayBonus =  best_roster[(best_roster.TEAM_ABBREVIATION == visitor)]
+    awayPlayerBonus = awayBonus['PTS'].to_list()
+    if homePlayerBonus > awayPlayerBonus:
+        playerBonusWin = home
+    else:
+        playerBonusWin = visitor
+
+    homeBonus = list(homeBonus['PTS'].astype(float))
+    awayBonus = list(awayBonus['PTS'].astype(float))
+    closeShave = abs(homeBonus[0] - awayBonus[0])
+
+
     # Predict
-    if predictor > 0.5:
-        if spread >= 3:
+    if predictor > 0.3:
+        if spread >= 4:
             win_predictor = home
         else:
             win_predictor = visitor
     else:
-        win_predictor = visitor
+        if  ( closeShave >=.9) & (playerBonusWin == home):
+            win_predictor = home
+            print("bonus home wins")
+        else:
+            win_predictor = visitor
+            print("bonus visitor wins")
             
     #game prediction accuracy
     print(win_predictor, score, spread)

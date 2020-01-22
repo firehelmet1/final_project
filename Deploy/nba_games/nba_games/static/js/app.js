@@ -49,7 +49,7 @@ function predictHandler() {
   var urlH = `/metadata/${predictSampleH}`;
   var urlA = `/metadata/${predictSampleA}`;
   // var metaData = url;
-  var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
+  // var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
 
   // Fetch the JSON data and console log it
   // .then is Asynchronus call to request the data and keep going while waiting for data
@@ -75,6 +75,7 @@ var sound0 = new Audio('../static/Images/heShoots.mp4');
       // if(obj[1]){
 
           console.log("VEGAS BABY");
+          sound0.volume = 0.14;
           sound0.play();  
       }
   });
@@ -106,6 +107,7 @@ function myFunction(home, away) {
 
   var sound0 = new Audio('../static/Images/AtTheBuzer.mp3'); 
   // console.log("VEGAS BABY");
+  sound0.volume = 0.1;
   sound0.play();  
  
   // Predict Winner
